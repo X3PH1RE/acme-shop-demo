@@ -1,0 +1,13 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_TOKEN: tw_fake_deploy_sdu11rte5khnbaunan32u0zwbrzp0ft2
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/deploy.sh --target production
